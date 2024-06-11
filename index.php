@@ -56,17 +56,12 @@ $hotels = [
 <body>
     <h1>Php-Hotel</h1>
 
-    <?php
-    foreach ($hotels as $hotel) {
-    }
-    ?>
-
     <table>
 
         <tr>
             <?php
-            foreach ($hotel as $key => $valore) {
-                echo '<th>' . ucfirst($key) . '</th>';
+            foreach ($hotels as $key => $value) {
+                echo '<th>' . $key . '</th>';
             }
             ?>
         </tr>
@@ -77,13 +72,10 @@ $hotels = [
             foreach ($hotel as $proprieta) {
                 if ($proprieta === false) {
                     $proprieta = ' <i class="fa-solid fa-x"></i> ';
-                    echo '<td>' . $proprieta . '</td>';
                 } else  if ($proprieta === true) {
                     $proprieta = ' <i class="fa-solid fa-check"></i> ';
-                    echo '<td>' . $proprieta . '</td>';
-                } else {
-                    echo '<td>' . $proprieta . '</td>';
                 }
+                echo '<td>' . $proprieta . '</td>';
             }
             echo '</tr>';
         }
