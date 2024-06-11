@@ -48,10 +48,23 @@ $hotels = [
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
     <title>php-hotel</title>
 </head>
 
 <body>
+    <h1>Php-Hotel</h1>
+
+    <ul>
+        <?php
+        foreach ($hotels as $hotel) {
+            // echo '<li>' . $hotel['name'] . '</li>';
+            foreach ($hotel as $key => $valore) {
+                echo '<li>' . $key . ': ' . $valore . '</li>';
+            }
+        }
+        ?>
+    </ul>
 
 </body>
 
