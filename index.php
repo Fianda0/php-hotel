@@ -67,13 +67,15 @@ $hotels = [
     </ul> -->
 
     <table>
+
         <tr>
-            <th>Nome</th>
-            <th>Descrizione</th>
-            <th>Parcheggio</th>
-            <th>Voto</th>
-            <th>Diztanza dal centro</th>
+            <?php
+            foreach ($hotel as $key => $valore) {
+                echo '<th>' . ucfirst($key) . '</th>';
+            }
+            ?>
         </tr>
+
         <?php
         foreach ($hotels as $hotel) {
             echo '<tr>';
