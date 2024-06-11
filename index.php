@@ -60,8 +60,8 @@ $hotels = [
 
         <tr>
             <?php
-            foreach ($hotels as $key => $value) {
-                echo '<th>' . $key . '</th>';
+            foreach ($hotels[0] as $key => $value) {
+                echo '<th>' . ucfirst($key) . '</th>';
             }
             ?>
         </tr>
