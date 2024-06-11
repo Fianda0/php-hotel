@@ -49,22 +49,17 @@ $hotels = [
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>php-hotel</title>
 </head>
 
 <body>
     <h1>Php-Hotel</h1>
 
-    <!-- <ul>
-        <?php
-        foreach ($hotels as $hotel) {
-            // echo '<li>' . $hotel['name'] . '</li>';
-            foreach ($hotel as $key => $valore) {
-                echo '<li>' . $key . ': ' . $valore . '</li>';
-            }
-        }
-        ?>
-    </ul> -->
+    <?php
+    foreach ($hotels as $hotel) {
+    }
+    ?>
 
     <table>
 
@@ -80,7 +75,15 @@ $hotels = [
         foreach ($hotels as $hotel) {
             echo '<tr>';
             foreach ($hotel as $proprieta) {
-                echo '<td>' . $proprieta . '</td>';
+                if ($proprieta === false) {
+                    $proprieta = ' <i class="fa-solid fa-x"></i> ';
+                    echo '<td>' . $proprieta . '</td>';
+                } else  if ($proprieta === true) {
+                    $proprieta = ' <i class="fa-solid fa-check"></i> ';
+                    echo '<td>' . $proprieta . '</td>';
+                } else {
+                    echo '<td>' . $proprieta . '</td>';
+                }
             }
             echo '</tr>';
         }
