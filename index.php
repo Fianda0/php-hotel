@@ -55,7 +55,7 @@ $hotels = [
 <body>
     <h1>Php-Hotel</h1>
 
-    <ul>
+    <!-- <ul>
         <?php
         foreach ($hotels as $hotel) {
             // echo '<li>' . $hotel['name'] . '</li>';
@@ -64,7 +64,26 @@ $hotels = [
             }
         }
         ?>
-    </ul>
+    </ul> -->
+
+    <table>
+        <tr>
+            <th>Nome</th>
+            <th>Descrizione</th>
+            <th>Parcheggio</th>
+            <th>Voto</th>
+            <th>Diztanza dal centro</th>
+        </tr>
+        <?php
+        foreach ($hotels as $hotel) {
+            echo '<tr>';
+            foreach ($hotel as $proprieta) {
+                echo '<td>' . $proprieta . '</td>';
+            }
+            echo '</tr>';
+        }
+        ?>
+    </table>
 
 </body>
 
